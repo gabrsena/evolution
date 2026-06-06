@@ -1,13 +1,13 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { WhatsAppIcon } from './icons';
+import { PhoneIcon } from './icons';
 
 interface FloatingWhatsAppProps {
   customMessage?: string;
 }
 
-export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ customMessage }) => {
+export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -21,14 +21,9 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ customMessag
 
   if (!isVisible) return null;
 
-  const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000';
-  const url = customMessage 
-    ? `https://wa.me/${number}?text=${encodeURIComponent(customMessage)}`
-    : `https://wa.me/${number}`;
-
   return (
-    <a href={url} target="_blank" rel="noreferrer" className="floating-wa" aria-label="Chat on WhatsApp">
-      <WhatsAppIcon />
+    <a href="tel:+14070000000" className="floating-wa" aria-label="Call Now">
+      <PhoneIcon />
     </a>
   );
 };

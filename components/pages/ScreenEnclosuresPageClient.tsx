@@ -15,57 +15,39 @@ const CITIES = [
 ];
 
 const PROCESS_STEPS = [
-  { step: "01", title: "Design & Permitting", desc: "Custom 3D design plans, engineering, and filing permits with your local Florida municipality." },
-  { step: "02", title: "Excavation & Steel", desc: "Digging, shaping, framing with steel rebar reinforcement, and rough plumbing." },
-  { step: "03", title: "Gunite & Tiling", desc: "Shooting concrete shell (gunite), plumbing cure, tile, coping, and pool deck construction." },
-  { step: "04", title: "Plaster & Fill", desc: "Applying premium interior finishes, filling with water, chemistry startup, and final inspection." }
+  { step: "01", title: "Site Measurement", desc: "Detailed measurement of pool deck and patio structure for structural alignment." },
+  { step: "02", title: "Design & Permit", desc: "Draw up engineering blueprints and file city permits to comply with local wind codes." },
+  { step: "03", title: "Frame Installation", desc: "Erecting custom-cut aluminum support frames, brackets, and support braces." },
+  { step: "04", title: "Screen Installation", desc: "Fitting heavy-duty screen mesh panels, installing doors, and final quality check." }
 ];
 
 const FAQS = [
   {
-    q: "How long does a new pool construction take?",
-    a: "Typically, new pool construction takes between 8 to 12 weeks from excavation to plastering, depending on complexity and permitting."
+    q: "What screen materials do you offer?",
+    a: "We offer standard fiberglass, super screen and no-see-um mesh options."
   },
   {
-    q: "Do you handle all the permits and utility approvals?",
-    a: "Yes, we handle the entire permitting process with your local Florida municipality and coordinate with utility companies before digging."
+    q: "Do screen enclosures require permits?",
+    a: "Yes, permits are required in most Central Florida cities. We handle this for you."
   },
   {
-    q: "What's the difference between concrete and fiberglass pools?",
-    a: "Concrete (gunite) pools offer unlimited custom shapes, sizes, and features, while fiberglass pools are pre-manufactured shells that offer faster installation."
+    q: "Can you repair existing enclosures?",
+    a: "Yes, we repair and re-screen existing aluminum pool enclosures."
   },
   {
-    q: "Do you offer warranty on pool construction?",
-    a: "Yes, we provide structural warranties on concrete shell structures and manufacturer warranties on all pool equipment."
+    q: "How long does installation take?",
+    a: "Most screen enclosure projects take 3–7 days depending on size."
   }
 ];
 
-const services = [
-  {
-    title: "New Pool Construction",
-    desc: "Custom-designed concrete and gunite pools engineered to perfectly fit your lifestyle and backyard. From resort-style designs with beach entries to sleek modern pools.",
-    items: ["3D digital design layouts", "Excavation, plumbing & electrical", "Premium plaster & pebble finishes"]
-  },
-  {
-    title: "Pool Renovation & Resurfacing",
-    desc: "Restore your pool's beauty and integrity. We specialize in custom tiling, modern plaster resurfacing, energy-efficient equipment installations, and deck expansions.",
-    items: ["Premium plaster & pebble finishes", "New tile & coping selection", "Equipment upgrades & automation"]
-  },
-  {
-    title: "Water Features & Spas",
-    desc: "Elevate your swimming pool experience with custom integrated spas, waterfalls, rock features, deck jets, and state-of-the-art ambient LED lighting.",
-    items: ["Custom spillway spas", "Rock waterfalls & sheer descents", "Smart LED lighting & automation"]
-  }
-];
-
-const PoolPageContent = () => {
+const ScreenEnclosuresPageContent = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
     zip: '',
-    service: 'Pools',
+    service: 'Screen Enclosures',
     message: ''
   });
 
@@ -137,7 +119,7 @@ const PoolPageContent = () => {
             zIndex: 0 
           }}
         >
-          <source src="/pool.mp4" type="video/mp4" />
+          <source src="/OutdoorLiving.mp4" type="video/mp4" />
         </video>
         <div 
           style={{ 
@@ -169,7 +151,7 @@ const PoolPageContent = () => {
               marginBottom: '16px'
             }}
           >
-            Luxury Pools & Spas
+            SCREEN ENCLOSURES
           </span>
           <h1 
             style={{ 
@@ -180,7 +162,7 @@ const PoolPageContent = () => {
               fontFamily: "'Cormorant Garamond', serif"
             }}
           >
-            Resort-Style Pools Built for Florida Living
+            Custom Screen Enclosures in Central Florida
           </h1>
           <p 
             style={{ 
@@ -191,7 +173,7 @@ const PoolPageContent = () => {
               lineHeight: 1.6
             }}
           >
-            From custom new concrete pool construction to high-end renovations, spas, and water features, we construct luxury outdoor retreats.
+            Keep bugs, debris, and wildlife out of your patio and pool areas with high-quality, wind-resistant aluminum structures.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a 
@@ -224,53 +206,38 @@ const PoolPageContent = () => {
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
             <span style={{ color: '#C9A55A', fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>
-              What We Offer
+              Why Choose Us
             </span>
             <h2 className="section-headline" style={{ marginTop: '8px', color: '#111827', fontFamily: "'Cormorant Garamond', serif" }}>
-              Our Premium Pool Services
+              Why Choose Elevation for Screen Enclosures
             </h2>
             <div style={{ width: '60px', height: '3px', background: '#C9A55A', margin: '20px auto 0' }} />
           </div>
 
-          <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
-            {services.map((svc, index) => (
-              <div 
-                key={index} 
-                className="service-card"
-                style={{ 
-                  background: '#ffffff', 
-                  borderRadius: '12px', 
-                  padding: '40px 32px', 
-                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.03)',
-                  border: '1px solid #f3f4f6',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  height: '100%'
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '48px', height: '48px', borderRadius: '8px', background: 'rgba(201, 165, 90, 0.1)', color: '#C9A55A', marginBottom: '24px' }}>
-                  <CheckIcon />
-                </div>
-                <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '16px', color: '#111827', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                  {svc.title}
-                </h3>
-                <p style={{ color: '#4b5563', fontSize: '15px', lineHeight: '1.6', marginBottom: '24px', flexGrow: 1 }}>
-                  {svc.desc}
-                </p>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', borderTop: '1px solid #f3f4f6', paddingTop: '20px' }}>
-                  {svc.items.map((item, i) => (
-                    <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#374151', fontWeight: 500 }}>
-                      <span style={{ color: '#C9A55A', display: 'flex', alignItems: 'center' }}>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
+            <div style={{ background: '#ffffff', borderRadius: '12px', padding: '40px 32px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.03)', border: '1px solid #f3f4f6' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '48px', height: '48px', borderRadius: '8px', background: 'rgba(201, 165, 90, 0.1)', color: '#C9A55A', marginBottom: '24px' }}>
+                <CheckIcon />
               </div>
-            ))}
+              <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '16px', color: '#111827', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Bug-Free Outdoor Living</h3>
+              <p style={{ color: '#4b5563', fontSize: '15px', lineHeight: '1.6' }}>Enjoy Florida evenings without mosquitoes or insects. Screen enclosures extend your usable outdoor time.</p>
+            </div>
+
+            <div style={{ background: '#ffffff', borderRadius: '12px', padding: '40px 32px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.03)', border: '1px solid #f3f4f6' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '48px', height: '48px', borderRadius: '8px', background: 'rgba(201, 165, 90, 0.1)', color: '#C9A55A', marginBottom: '24px' }}>
+                <CheckIcon />
+              </div>
+              <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '16px', color: '#111827', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Protects Your Pool</h3>
+              <p style={{ color: '#4b5563', fontSize: '15px', lineHeight: '1.6' }}>Keeps leaves, debris and wildlife out of your pool — reducing cleaning time and chemical costs.</p>
+            </div>
+
+            <div style={{ background: '#ffffff', borderRadius: '12px', padding: '40px 32px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.03)', border: '1px solid #f3f4f6' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '48px', height: '48px', borderRadius: '8px', background: 'rgba(201, 165, 90, 0.1)', color: '#C9A55A', marginBottom: '24px' }}>
+                <CheckIcon />
+              </div>
+              <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '16px', color: '#111827', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Custom Sizes & Styles</h3>
+              <p style={{ color: '#4b5563', fontSize: '15px', lineHeight: '1.6' }}>Designed to fit your exact pool and patio dimensions with multiple aluminum frame and screen options.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -280,7 +247,7 @@ const PoolPageContent = () => {
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", color: '#ffffff', fontSize: '48px', fontWeight: 600, textAlign: 'center', margin: 0 }}>
-              Our Pool Construction Process
+              Our Screen Enclosure Process
             </h2>
             <div style={{ width: '60px', height: '1px', background: '#C9A55A', margin: '20px auto 0' }} />
           </div>
@@ -382,7 +349,7 @@ const PoolPageContent = () => {
             Areas We Serve
           </h2>
           <p style={{ color: '#6B7280', fontSize: '16px', marginBottom: '32px', margin: '0 auto 32px', maxWidth: '600px' }}>
-            We provide professional pool installation and renovation for homeowners across Central Florida.
+            We provide professional screen enclosure installation for homeowners across Central Florida.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
             {CITIES.map((city, idx) => (
@@ -579,15 +546,15 @@ const PoolPageContent = () => {
 
       <TestimonialSection />
       <Footer />
-      <FloatingWhatsApp customMessage="Hi, I'm interested in a pool installation or renovation project for my home in Central Florida." />
+      <FloatingWhatsApp customMessage="Hi, I'm interested in a screen enclosure project for my home in Central Florida." />
     </div>
   );
 };
 
-export default function PoolPageClient() {
+export default function ScreenEnclosuresPageClient() {
   return (
     <TranslationProvider>
-      <PoolPageContent />
+      <ScreenEnclosuresPageContent />
     </TranslationProvider>
   );
 }

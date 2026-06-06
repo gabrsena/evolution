@@ -32,45 +32,53 @@ export const Navbar = () => {
     <>
       <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : 'navbar-transparent'}`}>
         <div className="nav-logo" style={{ display: 'flex', alignItems: 'center' }}>
-          <Link href="/" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none' }}>
+          <Link href="/" aria-label="Elevation Outdoor Living" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none' }}>
             <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, color: '#FFFFFF', fontSize: '23px', letterSpacing: '1px', display: 'flex', alignItems: 'center', lineHeight: '1' }}>
               ELEV
-              <svg width="14" height="20" viewBox="0 0 14 20" style={{ display: 'inline-block', margin: '0 1px' }}>
+              <span className="sr-only">A</span>
+              <svg width="14" height="20" viewBox="0 0 14 20" aria-hidden="true" style={{ display: 'inline-block', margin: '0 1px' }}>
                 <line x1="1.5" y1="19.5" x2="7" y2="0.5" stroke="#C9A55A" strokeWidth="1.8" strokeLinecap="round" />
                 <line x1="7" y1="0.5" x2="12.5" y2="19.5" stroke="#FFFFFF" strokeWidth="2.8" strokeLinecap="round" />
               </svg>
               TION
             </span>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', marginTop: '3px' }}>
-              <span style={{ height: '1px', width: '12px', backgroundColor: '#C9A55A', display: 'inline-block' }}></span>
+              <span aria-hidden="true" style={{ height: '1px', width: '12px', backgroundColor: '#C9A55A', display: 'inline-block' }}></span>
               <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '9px', fontWeight: 600, letterSpacing: '3px', color: '#479FC8', textTransform: 'uppercase', padding: '0 6px', lineHeight: '1' }}>
                 OUTDOOR LIVING
               </span>
-              <span style={{ height: '1px', width: '12px', backgroundColor: '#C9A55A', display: 'inline-block' }}></span>
+              <span aria-hidden="true" style={{ height: '1px', width: '12px', backgroundColor: '#C9A55A', display: 'inline-block' }}></span>
             </div>
           </Link>
         </div>
         <div className="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-          <div className="nav-links desktop-only">
-            <Link href="/pool" className="nav-link">
-              Pool
+          <div className="nav-links desktop-only" style={{ gap: 'clamp(10px, 1.8vw, 24px)' }}>
+            <Link href="/" className="nav-link">
+              Home
+            </Link>
+            <Link href="/pools" className="nav-link">
+              Pools
             </Link>
             <Link href="/pavers" className="nav-link">
               Pavers
             </Link>
-            <Link href="/outdoor-living" className="nav-link">
-              Outdoor Living
+            <Link href="/artificial-turf" className="nav-link">
+              Artificial Turf
             </Link>
-            <Link href="/landscaping" className="nav-link">
-              Landscaping
+            <Link href="/summer-kitchens" className="nav-link">
+              Summer Kitchens
             </Link>
-            <Link href="/#about" className="nav-link">
-              About Us
+            <Link href="/vinyl-fence" className="nav-link">
+              Vinyl Fence
+            </Link>
+            <Link href="/screen-enclosures" className="nav-link">
+              Screen Enclosures
+            </Link>
+            <Link href="/contact" className="nav-link">
+              Contact
             </Link>
           </div>
 
-
-          
           <div className="mobile-menu-btn mobile-only" onClick={() => setIsMenuOpen(!isMenuOpen)} style={{ cursor: 'pointer', color: '#FFFFFF', display: 'flex', zIndex: 1002, position: 'relative' }}>
             {isMenuOpen ? (
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,23 +101,33 @@ export const Navbar = () => {
           </svg>
         </div>
         <div className="mobile-menu-content">
-          <Link href="/pool" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
-            Pool
+          <Link href="/" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            Home
+          </Link>
+          <Link href="/pools" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            Pools
           </Link>
           <Link href="/pavers" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
             Pavers
           </Link>
-          <Link href="/outdoor-living" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
-            Outdoor Living
+          <Link href="/artificial-turf" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            Artificial Turf
           </Link>
-          <Link href="/landscaping" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
-            Landscaping
+          <Link href="/summer-kitchens" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            Summer Kitchens
           </Link>
-          <Link href="/#about" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
-            About Us
+          <Link href="/vinyl-fence" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            Vinyl Fence
+          </Link>
+          <Link href="/screen-enclosures" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            Screen Enclosures
+          </Link>
+          <Link href="/contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            Contact
           </Link>
         </div>
       </div>
     </>
   );
 };
+

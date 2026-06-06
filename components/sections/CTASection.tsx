@@ -27,46 +27,72 @@ export const CTASection: React.FC<CTASectionProps> = ({ cityName }) => {
           {t.formTitle}
         </h2>
         <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '15px', lineHeight: '1.6', marginBottom: '32px', textAlign: 'center', maxWidth: '480px', margin: '0 auto 32px' }}>
-          Connect directly with our team on WhatsApp. No forms, no wait times—just immediate support to design and build your dream outdoor living space.
+          Request a free estimate online or call us directly to schedule a backyard consultation with our design team.
         </p>
 
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '14px' }}>
+        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '24px' }}>
           <a 
-            href={`https://wa.me/${waNumber}?text=${encodeURIComponent(cityName ? `Hi, I'm interested in an outdoor living project in ${cityName}.` : "Hi! I'm interested in starting an outdoor living project with Elevation.")}`} 
-            target="_blank" 
-            rel="noreferrer" 
+            href="/contact" 
             style={{ 
               display: 'inline-flex', 
               alignItems: 'center', 
               justifyContent: 'center', 
-              gap: '10px', 
               padding: '14px 28px', 
-              background: '#10B981',
+              background: '#C9A55A',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '9999px',
+              borderRadius: '6px',
               fontWeight: 600,
               fontSize: '15px',
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               cursor: 'pointer',
               textDecoration: 'none',
               transition: 'all 0.2s ease',
-              boxShadow: '0 4px 15px rgba(16, 185, 129, 0.2)',
-              width: 'auto',
-              minWidth: '240px'
+              boxShadow: '0 4px 15px rgba(201, 165, 90, 0.2)',
             }}
             onMouseOver={(e) => {
-              e.currentTarget.style.background = '#059669';
+              e.currentTarget.style.background = '#b8944a';
               e.currentTarget.style.transform = 'translateY(-1px)';
             }}
             onMouseOut={(e) => {
-              e.currentTarget.style.background = '#10B981';
+              e.currentTarget.style.background = '#C9A55A';
               e.currentTarget.style.transform = 'none';
             }}
           >
-            <WhatsAppIcon />
-            <span>Chat with our Team</span>
+            Request a Free Estimate
           </a>
+          <a 
+            href="tel:+14070000000" 
+            style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              justifyContent: 'center', 
+              padding: '14px 28px', 
+              background: 'transparent',
+              color: '#FFFFFF',
+              border: '1px solid rgba(255, 255, 255, 0.6)',
+              borderRadius: '6px',
+              fontWeight: 600,
+              fontSize: '15px',
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              cursor: 'pointer',
+              textDecoration: 'none',
+              transition: 'all 0.2s ease',
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.borderColor = '#ffffff';
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+              e.currentTarget.style.transform = 'translateY(-1px)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.6)';
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.transform = 'none';
+            }}
+          >
+            Call Now
+          </a>
+        </div>
 
           <div style={{ 
             display: 'flex', 
@@ -98,7 +124,6 @@ export const CTASection: React.FC<CTASectionProps> = ({ cityName }) => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
+      </section>
+    );
+  };
