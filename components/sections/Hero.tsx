@@ -18,8 +18,8 @@ export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride })
   };
 
   const displaySubtext = cityName
-    ? `Concrete & fiberglass pools, paver patios, artificial turf, summer kitchens, vinyl fences and screen enclosures in ${cityName}.`
-    : `Concrete & fiberglass pools, paver patios, artificial turf, summer kitchens, vinyl fences and screen enclosures.`;
+    ? `We build concrete and fiberglass pools, paver patios, artificial turf, summer kitchens, vinyl fences and screen enclosures for homeowners across ${cityName} and Central Florida.`
+    : `We build concrete and fiberglass pools, paver patios, artificial turf, summer kitchens, vinyl fences and screen enclosures for homeowners across Orlando and Central Florida.`;
 
   return (
     <section className="hero-section" style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '100px 24px' }}>
