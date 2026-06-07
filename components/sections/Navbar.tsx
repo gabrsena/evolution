@@ -25,29 +25,28 @@ export const Navbar = () => {
     }
   };
 
-  const waNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000';
-  const displayWhatsAppUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent("Hi, I'm interested in an outdoor living project for my home in Central Florida.")}`;
-
   return (
     <>
       <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : 'navbar-transparent'}`}>
         <div className="nav-logo" style={{ display: 'flex', alignItems: 'center' }}>
-          <Link href="/" aria-label="Elevation Outdoor Living" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none' }}>
-            <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, color: '#FFFFFF', fontSize: '23px', letterSpacing: '1px', display: 'flex', alignItems: 'center', lineHeight: '1' }}>
-              ELEV
-              <span className="sr-only">A</span>
-              <svg width="14" height="20" viewBox="0 0 14 20" aria-hidden="true" style={{ display: 'inline-block', margin: '0 1px' }}>
-                <line x1="1.5" y1="19.5" x2="7" y2="0.5" stroke="#C9A55A" strokeWidth="1.8" strokeLinecap="round" />
-                <line x1="7" y1="0.5" x2="12.5" y2="19.5" stroke="#FFFFFF" strokeWidth="2.8" strokeLinecap="round" />
-              </svg>
-              TION
-            </span>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', marginTop: '3px' }}>
-              <span aria-hidden="true" style={{ height: '1px', width: '12px', backgroundColor: '#C9A55A', display: 'inline-block' }}></span>
-              <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '9px', fontWeight: 600, letterSpacing: '3px', color: '#479FC8', textTransform: 'uppercase', padding: '0 6px', lineHeight: '1' }}>
-                OUTDOOR LIVING
+          <Link href="/" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none' }}>
+            <span className="sr-only">Elevation Outdoor Living</span>
+            <div aria-hidden="true" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+              <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500, color: '#FFFFFF', fontSize: '23px', letterSpacing: '1px', display: 'flex', alignItems: 'center', lineHeight: '1' }}>
+                ELEV
+                <svg width="14" height="20" viewBox="0 0 14 20" style={{ display: 'inline-block', margin: '0 1px' }}>
+                  <line x1="1.5" y1="19.5" x2="7" y2="0.5" stroke="#C9A55A" strokeWidth="1.8" strokeLinecap="round" />
+                  <line x1="7" y1="0.5" x2="12.5" y2="19.5" stroke="#FFFFFF" strokeWidth="2.8" strokeLinecap="round" />
+                </svg>
+                TION
               </span>
-              <span aria-hidden="true" style={{ height: '1px', width: '12px', backgroundColor: '#C9A55A', display: 'inline-block' }}></span>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', marginTop: '3px' }}>
+                <span style={{ height: '1px', width: '12px', backgroundColor: '#C9A55A', display: 'inline-block' }}></span>
+                <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '9px', fontWeight: 600, letterSpacing: '3px', color: '#479FC8', textTransform: 'uppercase', padding: '0 6px', lineHeight: '1' }}>
+                  OUTDOOR LIVING
+                </span>
+                <span style={{ height: '1px', width: '12px', backgroundColor: '#C9A55A', display: 'inline-block' }}></span>
+              </div>
             </div>
           </Link>
         </div>

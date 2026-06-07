@@ -9,18 +9,11 @@ interface PackagesSectionProps {
 }
 
 export const PackagesSection: React.FC<PackagesSectionProps> = ({ cityName }) => {
-  const waNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000';
+  const suffix = cityName ? `?city=${encodeURIComponent(cityName)}` : '';
 
-  const suffix = cityName ? ` in ${cityName}` : ' in Central Florida';
-
-  const msg1 = `Hi, I'm interested in the Hardscape Essentials package${suffix}.`;
-  const link1 = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg1)}`;
-
-  const msg2 = `Hi, I'm interested in the Outdoor Living package${suffix}.`;
-  const link2 = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg2)}`;
-
-  const msg3 = `Hi, I'm interested in the Full Backyard Transformation package${suffix}.`;
-  const link3 = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg3)}`;
+  const link1 = `/contact${suffix}`;
+  const link2 = `/contact${suffix}`;
+  const link3 = `/contact${suffix}`;
 
   return (
     <section className="packages-section fade-in-section">
@@ -43,11 +36,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ cityName }) =>
             </ul>
             <a 
               href={link1} 
-              target="_blank" 
-              rel="noreferrer" 
               className="btn-primary package-btn"
             >
-              Request a Quote on WhatsApp
+              Request a Free Estimate
             </a>
           </div>
 
@@ -69,11 +60,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ cityName }) =>
             </ul>
             <a 
               href={link2} 
-              target="_blank" 
-              rel="noreferrer" 
               className="btn-primary package-btn"
             >
-              Request a Quote on WhatsApp
+              Request a Free Estimate
             </a>
           </div>
 
@@ -94,11 +83,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ cityName }) =>
             </ul>
             <a 
               href={link3} 
-              target="_blank" 
-              rel="noreferrer" 
               className="btn-primary package-btn"
             >
-              Request a Quote on WhatsApp
+              Request a Free Estimate
             </a>
           </div>
         </div>

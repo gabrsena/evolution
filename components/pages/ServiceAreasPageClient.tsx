@@ -4,15 +4,11 @@ import React, { useEffect } from 'react';
 import { TranslationProvider, useTranslation } from '../contexts/TranslationContext';
 import { Navbar } from '../sections/Navbar';
 import { Footer } from '../sections/Footer';
+import { CheckIcon } from '../icons';
 import { FloatingWhatsApp } from '../FloatingWhatsApp';
-import { WhatsAppIcon, CheckIcon } from '../icons';
 
 const ServiceAreasPageContent = () => {
   const [videoLoaded, setVideoLoaded] = React.useState(false);
-  const { t } = useTranslation();
-  const waNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000';
-  const customWhatsAppMessage = "Hi, I'm interested in an outdoor living project in Central Florida.";
-  const displayWhatsAppUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(customWhatsAppMessage)}`;
 
   useEffect(() => {
     // Scroll animation observer
@@ -162,14 +158,17 @@ const ServiceAreasPageContent = () => {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a 
-              href={displayWhatsAppUrl} 
+              href="/contact" 
               className="btn-primary" 
-              target="_blank" 
-              rel="noreferrer" 
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
             >
-              <WhatsAppIcon />
-              <span>Contact Our Design Team</span>
+              <span>Request a Free Estimate</span>
+            </a>
+            <a 
+              href="tel:+14070000000" 
+              className="btn-secondary"
+              style={{ color: '#ffffff', borderColor: '#ffffff' }}
+            >
+              <span>Call Now</span>
             </a>
           </div>
         </div>
@@ -190,7 +189,6 @@ const ServiceAreasPageContent = () => {
 
           <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
             {areas.map((area, index) => {
-              const waAreaUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(area.msg)}`;
               return (
                 <div 
                   key={index} 
@@ -220,9 +218,7 @@ const ServiceAreasPageContent = () => {
                   </p>
                   <div style={{ borderTop: '1px solid #f3f4f6', paddingTop: '20px' }}>
                     <a 
-                      href={waAreaUrl}
-                      target="_blank"
-                      rel="noreferrer"
+                      href={`/contact?city=${encodeURIComponent(area.name)}`}
                       style={{ 
                         color: '#C9A55A', 
                         fontWeight: 600, 
@@ -233,7 +229,6 @@ const ServiceAreasPageContent = () => {
                         textDecoration: 'none'
                       }}
                     >
-                      <WhatsAppIcon />
                       <span>Request Quote in {area.name}</span>
                     </a>
                   </div>
@@ -254,20 +249,17 @@ const ServiceAreasPageContent = () => {
             We serve residential clients all across Orange County, Osceola County, Lake County, Seminole County, and surrounding Central Florida regions. Contact us to verify coverage.
           </p>
           <a 
-            href={displayWhatsAppUrl} 
+            href="/contact" 
             className="btn-primary" 
-            target="_blank" 
-            rel="noreferrer" 
             style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
           >
-            <WhatsAppIcon />
             <span>Inquire About Your Location</span>
           </a>
         </div>
       </section>
 
       <Footer />
-      <FloatingWhatsApp customMessage={customWhatsAppMessage} />
+      <FloatingWhatsApp />
     </div>
   );
 };

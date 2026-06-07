@@ -28,7 +28,6 @@ const CITIES = [
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ currentCity }) => {
   const { t } = useTranslation();
-  const waNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000';
 
   const getActiveStyle = (cityName: string) => {
     if (currentCity && cityName.toLowerCase() === currentCity.toLowerCase()) {

@@ -10,7 +10,6 @@ interface CTASectionProps {
 
 export const CTASection: React.FC<CTASectionProps> = ({ cityName }) => {
   const { lang, t } = useTranslation();
-  const waNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000';
 
 
   return (

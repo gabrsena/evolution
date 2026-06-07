@@ -9,14 +9,11 @@ import { AboutSection } from '../sections/AboutSection';
 import { TestimonialSection } from '../sections/TestimonialSection';
 import { CTASection } from '../sections/CTASection';
 import { FloatingWhatsApp } from '../FloatingWhatsApp';
-import { WhatsAppIcon, CheckIcon } from '../icons';
+import { CheckIcon } from '../icons';
 
 const OutdoorLivingPageContent = () => {
   const [videoLoaded, setVideoLoaded] = React.useState(false);
   const { t } = useTranslation();
-  const waNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000';
-  const customWhatsAppMessage = "Hi, I'm interested in an outdoor living or kitchen project for my home in Central Florida.";
-  const displayWhatsAppUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(customWhatsAppMessage)}`;
 
   useEffect(() => {
     // Scroll animation observer
@@ -161,14 +158,17 @@ const OutdoorLivingPageContent = () => {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a 
-              href={displayWhatsAppUrl} 
+              href="/contact" 
               className="btn-primary" 
-              target="_blank" 
-              rel="noreferrer" 
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
             >
-              <WhatsAppIcon />
-              <span>Request an Outdoor Kitchen Quote</span>
+              <span>Request a Free Estimate</span>
+            </a>
+            <a 
+              href="tel:+14070000000" 
+              className="btn-secondary"
+              style={{ color: '#ffffff', borderColor: '#ffffff' }}
+            >
+              <span>Call Now</span>
             </a>
           </div>
         </div>
@@ -235,7 +235,7 @@ const OutdoorLivingPageContent = () => {
       <TestimonialSection />
       <CTASection />
       <Footer />
-      <FloatingWhatsApp customMessage={customWhatsAppMessage} />
+      <FloatingWhatsApp />
     </div>
   );
 };

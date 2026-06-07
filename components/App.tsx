@@ -42,12 +42,6 @@ const AppContent: React.FC<AppProps> = ({ cityName }) => {
     };
   }, []);
 
-  const customWhatsAppMessage = cityName
-    ? (lang === 'en'
-        ? `Hi, I'm interested in an outdoor living project in ${cityName}.`
-        : `Hola, estoy interesado en un proyecto de vida al aire libre en ${cityName}.`)
-    : t.waMessage;
-
   return (
     <div className="app-container">
       <Navbar />
@@ -65,7 +59,7 @@ const AppContent: React.FC<AppProps> = ({ cityName }) => {
       </div>
       
       <Footer />
-      <FloatingWhatsApp customMessage={customWhatsAppMessage} />
+      <FloatingWhatsApp />
     </div>
   );
 };

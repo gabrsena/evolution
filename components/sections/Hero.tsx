@@ -17,8 +17,6 @@ export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride })
     }
   };
 
-  const waNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000';
-
   const displaySubtext = cityName
     ? `Concrete & fiberglass pools, paver patios, artificial turf, summer kitchens, vinyl fences and screen enclosures in ${cityName}.`
     : `Concrete & fiberglass pools, paver patios, artificial turf, summer kitchens, vinyl fences and screen enclosures.`;
