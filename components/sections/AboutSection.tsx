@@ -82,9 +82,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ currentCity }) => {
           <p style={{ marginTop: '20px', fontSize: '14px', color: '#64748b' }}>
             Don't see your city?{" "}
             <a 
-              href={`https://wa.me/${waNumber}?text=${encodeURIComponent("Hi, I'm interested in an outdoor living project for my home in Central Florida.")}`}
-              target="_blank"
-              rel="noreferrer"
+              href="https://elevation-coral.vercel.app/contact"
               style={{ color: 'var(--primary-blue)', fontWeight: '600', textDecoration: 'underline' }}
             >
               Contact us — we likely cover your area.
