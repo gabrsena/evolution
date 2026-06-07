@@ -123,7 +123,7 @@ const SummerKitchensPageContent = () => {
             transition: 'opacity 1s ease-in-out'
           }}
         >
-          <source src="/OutdoorLiving.mp4" type="video/mp4" />
+          <source src="/SummerKitchens.webm" type="video/webm" />
         </video>
         <div 
           style={{ 
