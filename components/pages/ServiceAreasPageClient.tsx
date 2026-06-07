@@ -8,6 +8,7 @@ import { FloatingWhatsApp } from '../FloatingWhatsApp';
 import { WhatsAppIcon, CheckIcon } from '../icons';
 
 const ServiceAreasPageContent = () => {
+  const [videoLoaded, setVideoLoaded] = React.useState(false);
   const { t } = useTranslation();
   const waNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000';
   const customWhatsAppMessage = "Hi, I'm interested in an outdoor living project in Central Florida.";
@@ -90,6 +91,7 @@ const ServiceAreasPageContent = () => {
           muted 
           loop 
           playsInline 
+          onLoadedData={() => setVideoLoaded(true)}
           style={{ 
             position: 'absolute', 
             top: 0, 
@@ -97,7 +99,9 @@ const ServiceAreasPageContent = () => {
             width: '100%', 
             height: '100%', 
             objectFit: 'cover', 
-            zIndex: 0 
+            zIndex: 0,
+            opacity: videoLoaded ? 1 : 0,
+            transition: 'opacity 1s ease-in-out'
           }}
         >
           <source src="/pool.mp4" type="video/mp4" />

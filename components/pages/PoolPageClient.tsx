@@ -59,6 +59,7 @@ const services = [
 ];
 
 const PoolPageContent = () => {
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -127,6 +128,7 @@ const PoolPageContent = () => {
           muted 
           loop 
           playsInline 
+          onLoadedData={() => setVideoLoaded(true)}
           style={{ 
             position: 'absolute', 
             top: 0, 
@@ -134,7 +136,9 @@ const PoolPageContent = () => {
             width: '100%', 
             height: '100%', 
             objectFit: 'cover', 
-            zIndex: 0 
+            zIndex: 0,
+            opacity: videoLoaded ? 1 : 0,
+            transition: 'opacity 1s ease-in-out'
           }}
         >
           <source src="/pool.mp4" type="video/mp4" />

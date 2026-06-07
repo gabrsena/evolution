@@ -12,6 +12,7 @@ import { FloatingWhatsApp } from '../FloatingWhatsApp';
 import { WhatsAppIcon, CheckIcon } from '../icons';
 
 const LandscapingPageContent = () => {
+  const [videoLoaded, setVideoLoaded] = React.useState(false);
   const { t } = useTranslation();
   const waNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34600000000';
   const customWhatsAppMessage = "Hi, I'm interested in an artificial grass or landscaping project for my home in Central Florida.";
@@ -74,6 +75,7 @@ const LandscapingPageContent = () => {
           muted 
           loop 
           playsInline 
+          onLoadedData={() => setVideoLoaded(true)}
           style={{ 
             position: 'absolute', 
             top: 0, 
@@ -81,7 +83,9 @@ const LandscapingPageContent = () => {
             width: '100%', 
             height: '100%', 
             objectFit: 'cover', 
-            zIndex: 0 
+            zIndex: 0,
+            opacity: videoLoaded ? 1 : 0,
+            transition: 'opacity 1s ease-in-out'
           }}
         >
           <source src="/Landscaping.mp4" type="video/mp4" />

@@ -8,6 +8,8 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride }) => {
+  const [videoLoaded, setVideoLoaded] = React.useState(false);
+
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -29,6 +31,7 @@ export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride })
         muted
         loop
         playsInline
+        onLoadedData={() => setVideoLoaded(true)}
         style={{
           position: 'absolute',
           top: 0,
@@ -37,6 +40,8 @@ export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride })
           height: '100%',
           objectFit: 'cover',
           zIndex: 0,
+          opacity: videoLoaded ? 1 : 0,
+          transition: 'opacity 1s ease-in-out',
         }}
       >
         <source src="/hero.webm" type="video/webm" />

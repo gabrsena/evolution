@@ -41,6 +41,7 @@ const FAQS = [
 ];
 
 const ScreenEnclosuresPageContent = () => {
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -109,6 +110,7 @@ const ScreenEnclosuresPageContent = () => {
           muted 
           loop 
           playsInline 
+          onLoadedData={() => setVideoLoaded(true)}
           style={{ 
             position: 'absolute', 
             top: 0, 
@@ -116,7 +118,9 @@ const ScreenEnclosuresPageContent = () => {
             width: '100%', 
             height: '100%', 
             objectFit: 'cover', 
-            zIndex: 0 
+            zIndex: 0,
+            opacity: videoLoaded ? 1 : 0,
+            transition: 'opacity 1s ease-in-out'
           }}
         >
           <source src="/OutdoorLiving.mp4" type="video/mp4" />
