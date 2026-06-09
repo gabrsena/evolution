@@ -18,8 +18,8 @@ export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride })
   };
 
   const displaySubtext = cityName
-    ? `We build concrete and fiberglass pools, paver patios, artificial turf, summer kitchens, vinyl fences and screen enclosures for homeowners across ${cityName} and Central Florida.`
-    : `We build concrete and fiberglass pools, paver patios, artificial turf, summer kitchens, vinyl fences and screen enclosures for homeowners across Orlando and Central Florida.`;
+    ? `Premium outdoor living spaces tailored for homeowners in ${cityName} & Central Florida.`
+    : `Premium outdoor living spaces tailored for homeowners in Orlando & Central Florida.`;
 
   return (
     <section className="hero-section" style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '100px 24px' }}>
@@ -66,6 +66,14 @@ export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride })
           <p className="hero-subtitle">
             {displaySubtext}
           </p>
+          <div className="hero-services-list">
+            <span className="hero-service-item">Pools</span>
+            <span className="hero-service-item">Paver Patios</span>
+            <span className="hero-service-item">Artificial Turf</span>
+            <span className="hero-service-item">Summer Kitchens</span>
+            <span className="hero-service-item">Vinyl Fences</span>
+            <span className="hero-service-item">Screen Enclosures</span>
+          </div>
           <div className="hero-buttons" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a 
               href="/contact" 

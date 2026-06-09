@@ -559,111 +559,195 @@ button {
   width: 100%;
 }
 
-.hero-title {
+.hero-title, .hero h1 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
-  color: #FFFFFF;
-  font-size: 44px;
   line-height: 1.1;
   letter-spacing: -1px;
-  margin-bottom: 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #dcdcdc 40%, #a0a0a0 50%, #dcdcdc 60%, #ffffff 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.35)) !important;
+}
+
+.hero-title {
+  font-size: 34px;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
   .hero-title {
     font-size: 72px;
+    margin-bottom: 24px;
   }
 }
 
 .hero-subtitle {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 18px;
+  font-size: 15px; /* Reduced from 18px for mobile */
   color: rgba(255, 255, 255, 0.85);
   max-width: 560px;
-  margin: 0 auto 32px auto;
+  margin: 0 auto 24px auto;
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+}
+
 .btn-hero-primary {
-  background: #ffffff;
+  background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 40%, #e0e0e0 50%, #d0d0d0 51%, #ffffff 100%);
   color: #111827 !important;
   border-radius: 4px;
   padding: 16px 32px;
   font-weight: 600;
   font-size: 16px;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.6);
 }
 .btn-hero-primary:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 40%, #f0f0f0 50%, #e0e0e0 51%, #ffffff 100%);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.8);
   transform: translateY(-1px);
 }
 
 .btn-hero-secondary {
   background: transparent;
   color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 4px;
   padding: 16px 32px;
   font-weight: 600;
   font-size: 16px;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
 }
 .btn-hero-secondary:hover {
   border-color: #ffffff;
   background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.4);
   transform: translateY(-1px);
 }
 
+.hero-services-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  max-width: 800px;
+  margin: 0 auto 32px auto;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.hero-service-item {
+  position: relative;
+  white-space: nowrap;
+  background: linear-gradient(180deg, #ffffff 0%, #dcdcdc 40%, #a0a0a0 50%, #dcdcdc 60%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.hero-services-list .hero-service-item:not(:last-child)::after {
+  content: "|";
+  color: #C9A55A;
+  margin-left: 16px;
+  font-weight: 600;
+  -webkit-text-fill-color: #C9A55A;
+  filter: drop-shadow(0 0 6px rgba(201, 165, 90, 0.6));
+}
+
+@media (max-width: 767px) {
+  .hero-services-list {
+    gap: 4px 8px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    padding: 0 8px;
+  }
+  .hero-services-list .hero-service-item:not(:last-child)::after {
+    margin-left: 8px;
+  }
+}
+
 .btn-primary {
-  background: #C9A55A;
-  color: #ffffff;
-  border: 1px solid #C9A55A;
+  background: linear-gradient(to bottom, #E8C887 0%, #D8B777 40%, #C9A55A 50%, #B8944A 51%, #D8B777 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
   border-radius: 6px;
   padding: 14px 28px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.4px;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 15px rgba(201, 165, 90, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.2) !important;
 }
 .btn-primary:hover {
-  background: #b8944a;
-  border-color: #b8944a;
+  background: linear-gradient(to bottom, #F9D998 0%, #E8C887 40%, #D8B777 50%, #C9A55A 51%, #E8C887 100%) !important;
+  box-shadow: 0 0 25px rgba(201, 165, 90, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.3) !important;
   transform: translateY(-1px);
 }
 
 .btn-secondary {
-  background: transparent;
-  color: #111827;
-  border: 1px solid #111827;
+  background: transparent !important;
+  color: #111827 !important;
+  border: 1px solid rgba(17, 24, 39, 0.8) !important;
   border-radius: 6px;
   padding: 14px 28px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.4px;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 10px rgba(17, 24, 39, 0.15), inset 0 0 10px rgba(17, 24, 39, 0.05) !important;
 }
 .btn-secondary:hover {
-  background: #111827;
-  color: #ffffff;
+  background: rgba(17, 24, 39, 0.05) !important;
+  box-shadow: 0 0 15px rgba(17, 24, 39, 0.3), inset 0 0 10px rgba(17, 24, 39, 0.1) !important;
+  transform: translateY(-1px);
+}
+
+/* For dark backgrounds / hero sections, override secondary buttons to be silver/white neon */
+.hero .btn-secondary,
+.hero-section .btn-secondary,
+.btn-hero-secondary {
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.2) !important;
+}
+
+.hero .btn-secondary:hover,
+.hero-section .btn-secondary:hover,
+.btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.4) !important;
   transform: translateY(-1px);
 }
 .btn-text {
