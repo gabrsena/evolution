@@ -18,10 +18,10 @@ export const Footer = () => {
       <div className="footer-container">
         <div className="footer-grid">
           <div>
-            <div className="footer-logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginBottom: '16px' }}>
+            <div className="footer-logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '16px' }}>
               <span className="sr-only">RDS OUTDOOR LIVING</span>
-              <div aria-hidden="true" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: '#FFFFFF', fontSize: '26px', letterSpacing: '1.5px', display: 'flex', alignItems: 'center', lineHeight: '1' }}>
+              <div aria-hidden="true" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: '#FFFFFF', fontSize: '26px', letterSpacing: '1.5px', display: 'flex', alignItems: 'center', justifyContent: 'center', lineHeight: '1' }}>
                   RDS
                 </span>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '3px' }}>

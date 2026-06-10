@@ -29,10 +29,10 @@ export const Navbar = () => {
     <>
       <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : 'navbar-transparent'}`}>
         <div className="nav-logo" style={{ display: 'flex', alignItems: 'center' }}>
-          <Link href="/" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none' }}>
+          <Link href="/" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textDecoration: 'none' }}>
             <span className="sr-only">RDS OUTDOOR LIVING</span>
-            <div aria-hidden="true" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-              <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: '#FFFFFF', fontSize: '26px', letterSpacing: '1.5px', display: 'flex', alignItems: 'center', lineHeight: '1' }}>
+            <div aria-hidden="true" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: '#FFFFFF', fontSize: '26px', letterSpacing: '1.5px', display: 'flex', alignItems: 'center', justifyContent: 'center', lineHeight: '1' }}>
                 RDS
               </span>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', marginTop: '3px' }}>
