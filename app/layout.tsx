@@ -2,14 +2,14 @@ import './globals.css';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Elevation Outdoor Living | Pool, Pavers & Hardscape in Central Florida',
+  title: 'RDS Outdoor Living | Pool, Pavers & Hardscape in Central Florida',
   description: 'Professional pool installation, pavers, artificial grass, outdoor kitchens and hardscape design for homeowners across Central Florida. Licensed contractors. Free quotes.',
   keywords: 'pool installation Central Florida, pavers Orlando, artificial grass Central Florida, outdoor kitchen Orlando, hardscape Central Florida, backyard transformation Orlando, pool renovation Florida',
   icons: {
     icon: '/favicon.png',
   },
   openGraph: {
-    title: 'Elevation Outdoor Living | Pool, Pavers & Hardscape in Central Florida',
+    title: 'RDS Outdoor Living | Pool, Pavers & Hardscape in Central Florida',
     description: 'Professional pool installation, pavers, artificial grass, outdoor kitchens and hardscape design for homeowners across Central Florida. Licensed contractors. Free quotes.',
     type: 'website',
   },
@@ -29,9 +29,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "Elevation Outdoor Living",
+              "name": "RDS Outdoor Living",
               "description": "Professional pool installation, pavers, artificial grass, outdoor kitchens and hardscape design for homeowners across Central Florida.",
-              "url": "https://elevationoutdoorliving.com",
+              "url": "https://rdsoutdoorliving.com",
               "telephone": "+14071234567",
               "address": {
                 "@type": "PostalAddress",

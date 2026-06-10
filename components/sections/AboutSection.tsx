@@ -81,7 +81,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ currentCity }) => {
           <p style={{ marginTop: '20px', fontSize: '14px', color: '#64748b' }}>
             Don't see your city?{" "}
             <a 
-              href="https://elevation-coral.vercel.app/contact"
+              href="https://rds-coral.vercel.app/contact"
               style={{ color: 'var(--primary-blue)', fontWeight: '600', textDecoration: 'underline' }}
             >
               Contact us — we likely cover your area.
@@ -91,7 +91,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ currentCity }) => {
         
         <div className="about-visual" style={{ position: 'relative', width: '100%', height: '400px', borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(201, 165, 90, 0.2)', boxShadow: '0 15px 35px rgba(0,0,0,0.1)', background: '#000' }}>
           <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
-            <source src="/elevation.mp4" type="video/mp4" />
+            <source src="/rds.mp4" type="video/mp4" />
           </video>
         </div>
       </div>

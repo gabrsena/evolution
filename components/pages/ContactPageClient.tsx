@@ -44,7 +44,7 @@ const ContactContent = () => {
       `How they heard about us: ${formData.source}\n` +
       `Message: ${formData.message}`
     );
-    window.location.href = `mailto:info@elevationoutdoorliving.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@rdsoutdoorliving.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -114,8 +114,8 @@ const ContactContent = () => {
                 </div>
                 <div>
                   <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#111827', marginBottom: '4px' }}>Email Address</h4>
-                  <a href="mailto:info@elevationoutdoorliving.com" style={{ color: '#C9A55A', fontWeight: 600, fontSize: '16px', textDecoration: 'underline' }}>
-                    info@elevationoutdoorliving.com
+                  <a href="mailto:info@rdsoutdoorliving.com" style={{ color: '#C9A55A', fontWeight: 600, fontSize: '16px', textDecoration: 'underline' }}>
+                    info@rdsoutdoorliving.com
                   </a>
                 </div>
               </div>

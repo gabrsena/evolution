@@ -49,7 +49,7 @@ export const MapPinIcon = () => (
 
 export const ProCleanLogo = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 0 330 64" width="220" height="44" role="img">
-    <title>Elevation Outdoor Living</title>
+    <title>RDS Outdoor Living</title>
     <defs>
       <linearGradient id="logo-steel" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stopColor="#ffffff" />
@@ -63,7 +63,7 @@ export const ProCleanLogo = () => (
       <rect x="15" y="32" width="14" height="18" rx="2" fill="#0b0c0f"/>
       <polyline points="10,13 18,21 34,7" fill="none" stroke="#ffffff" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
     </g>
-    <text x="58" y="36" fontFamily="'Outfit', sans-serif" fontSize="28" fontWeight="800" fill="url(#logo-steel)" letterSpacing="-0.8">Elevation</text>
+    <text x="58" y="36" fontFamily="'Outfit', sans-serif" fontSize="28" fontWeight="800" fill="url(#logo-steel)" letterSpacing="-0.8">RDS</text>
     <line x1="58" y1="44" x2="318" y2="44" stroke="#3b82f6" strokeWidth="1.5" strokeLinecap="round"/>
     <text x="59" y="57" fontFamily="'Inter', sans-serif" fontSize="9" fontWeight="600" fill="#94a3b8" letterSpacing="2.5">OUTDOOR LIVING</text>
   </svg>

@@ -55,7 +55,7 @@ const AppContent: React.FC<AppProps> = ({ cityName }) => {
       
       {/* HIDDEN SEO TEXT BLOCK */}
       <div style={{ fontSize: '12px', color: '#9CA3AF', textAlign: 'center', padding: '24px', maxWidth: '800px', margin: '0 auto' }}>
-        Elevation Outdoor Living provides premium pool construction, pool deck renovation, custom paver patios, artificial grass installations, and luxury outdoor kitchens for homeowners across Central Florida — including Orlando, Kissimmee, Winter Park, Windermere, Lake Nona, and surrounding areas. Built on craftsmanship. Serving homeowners since 2017.
+        RDS Outdoor Living provides premium pool construction, pool deck renovation, custom paver patios, artificial grass installations, and luxury outdoor kitchens for homeowners across Central Florida — including Orlando, Kissimmee, Winter Park, Windermere, Lake Nona, and surrounding areas. Built on craftsmanship. Serving homeowners since 2017.
       </div>
       
       <Footer />

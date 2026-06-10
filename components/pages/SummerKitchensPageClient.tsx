@@ -84,7 +84,7 @@ const SummerKitchensPageContent = () => {
       `Service Needed: ${formData.service}\n` +
       `Message: ${formData.message}`
     );
-    window.location.href = `mailto:info@elevationoutdoorliving.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@rdsoutdoorliving.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -213,7 +213,7 @@ const SummerKitchensPageContent = () => {
               Why Choose Us
             </span>
             <h2 className="section-headline" style={{ marginTop: '8px', color: '#111827', fontFamily: "'Cormorant Garamond', serif" }}>
-              Why Choose Elevation for Summer Kitchens
+              Why Choose RDS for Summer Kitchens
             </h2>
             <div style={{ width: '60px', height: '3px', background: '#C9A55A', margin: '20px auto 0' }} />
           </div>

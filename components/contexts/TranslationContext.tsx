@@ -113,13 +113,13 @@ export const translations: Record<'en', Translation> = {
     testiTitle: "Trusted by homeowners",
     testimonials: [
       {
-        quote: "\"We are thrilled with our new pool and paver deck! The team at Elevation Outdoor Living was professional, fast, and the craftsmanship is outstanding. They transformed our Orlando backyard into a true resort-style oasis.\"",
+        quote: "\"We are thrilled with our new pool and paver deck! The team at RDS Outdoor Living was professional, fast, and the craftsmanship is outstanding. They transformed our Orlando backyard into a true resort-style oasis.\"",
         name: "Sarah & Mark T.",
         role: "Homeowners, Orlando",
         avatar: "/Sarah&mark.png"
       },
       {
-        quote: "\"Incredible attention to detail. Elevation built our custom outdoor kitchen and firepit patio. The quality of materials and communication throughout the build gave us total peace of mind. Highly recommended!\"",
+        quote: "\"Incredible attention to detail. RDS built our custom outdoor kitchen and firepit patio. The quality of materials and communication throughout the build gave us total peace of mind. Highly recommended!\"",
         name: "James L.",
         role: "Homeowners, Windermere",
         avatar: "/JamesL.png"
@@ -171,7 +171,7 @@ export const TranslationProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   // Load language preference from localStorage if available
   useEffect(() => {
-    const savedLang = localStorage.getItem('elevation-lang');
+    const savedLang = localStorage.getItem('rds-lang');
     if (savedLang === 'en') {
       setLang(savedLang);
     }
@@ -179,7 +179,7 @@ export const TranslationProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   const handleSetLang = (newLang: 'en') => {
     setLang(newLang);
-    localStorage.setItem('elevation-lang', newLang);
+    localStorage.setItem('rds-lang', newLang);
   };
 
   const t = translations[lang];

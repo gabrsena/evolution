@@ -117,7 +117,7 @@ const PaversPageContent = () => {
       `Service Needed: ${formData.service}\n` +
       `Message: ${formData.message}`
     );
-    window.location.href = `mailto:info@elevationoutdoorliving.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@rdsoutdoorliving.com?subject=${subject}&body=${body}`;
   };
 
   return (
