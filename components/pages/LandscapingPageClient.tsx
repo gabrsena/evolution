@@ -52,6 +52,7 @@ const LandscapingPageContent = () => {
   return (
     <div className="app-container">
       <Navbar />
+      <main>
 
       {/* Hero Section */}
       <section 
@@ -219,7 +220,9 @@ const LandscapingPageContent = () => {
       <AboutSection />
       <TestimonialSection />
       <CTASection />
-      <Footer />
+            </main>
+
+<Footer />
       <FloatingWhatsApp />
     </div>
   );

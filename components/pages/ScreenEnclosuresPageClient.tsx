@@ -90,6 +90,7 @@ const ScreenEnclosuresPageContent = () => {
   return (
     <div className="app-container">
       <Navbar />
+      <main>
 
       {/* Hero Section */}
       <section 
@@ -549,7 +550,9 @@ const ScreenEnclosuresPageContent = () => {
       </section>
 
       <TestimonialSection />
-      <Footer />
+            </main>
+
+<Footer />
       <FloatingWhatsApp customMessage="Hi, I'm interested in a screen enclosure project for my home in Central Florida." />
     </div>
   );

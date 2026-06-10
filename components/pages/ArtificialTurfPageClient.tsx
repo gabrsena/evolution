@@ -90,6 +90,7 @@ const TurfPageContent = () => {
   return (
     <div className="app-container">
       <Navbar />
+      <main>
 
       {/* Hero Section */}
       <section 
@@ -549,7 +550,9 @@ const TurfPageContent = () => {
       </section>
 
       <TestimonialSection />
-      <Footer />
+            </main>
+
+<Footer />
       <FloatingWhatsApp customMessage="Hi, I'm interested in an artificial turf project for my home in Central Florida." />
     </div>
   );

@@ -50,6 +50,7 @@ const ContactContent = () => {
   return (
     <div className="app-container">
       <Navbar />
+      <main>
 
       {/* Header Section */}
       <section 
@@ -263,7 +264,9 @@ const ContactContent = () => {
         </div>
       </section>
 
-      <Footer />
+            </main>
+
+<Footer />
     </div>
   );
 };

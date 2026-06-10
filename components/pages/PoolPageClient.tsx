@@ -108,6 +108,7 @@ const PoolPageContent = () => {
   return (
     <div className="app-container">
       <Navbar />
+      <main>
 
       {/* Hero Section */}
       <section 
@@ -582,7 +583,9 @@ const PoolPageContent = () => {
       </section>
 
       <TestimonialSection />
-      <Footer />
+            </main>
+
+<Footer />
       <FloatingWhatsApp customMessage="Hi, I'm interested in a pool installation or renovation project for my home in Central Florida." />
     </div>
   );

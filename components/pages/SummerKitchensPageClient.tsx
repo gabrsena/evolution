@@ -90,6 +90,7 @@ const SummerKitchensPageContent = () => {
   return (
     <div className="app-container">
       <Navbar />
+      <main>
 
       {/* Hero Section */}
       <section 
@@ -549,7 +550,9 @@ const SummerKitchensPageContent = () => {
       </section>
 
       <TestimonialSection />
-      <Footer />
+            </main>
+
+<Footer />
       <FloatingWhatsApp customMessage="Hi, I'm interested in a summer kitchen project for my home in Central Florida." />
     </div>
   );

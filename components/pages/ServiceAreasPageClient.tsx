@@ -67,6 +67,7 @@ const ServiceAreasPageContent = () => {
   return (
     <div className="app-container">
       <Navbar />
+      <main>
 
       {/* Hero Section */}
       <section 
@@ -258,7 +259,9 @@ const ServiceAreasPageContent = () => {
         </div>
       </section>
 
-      <Footer />
+            </main>
+
+<Footer />
       <FloatingWhatsApp />
     </div>
   );

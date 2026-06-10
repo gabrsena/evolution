@@ -123,6 +123,7 @@ const PaversPageContent = () => {
   return (
     <div className="app-container">
       <Navbar />
+      <main>
 
       {/* Hero Section */}
       <section 
@@ -597,7 +598,9 @@ const PaversPageContent = () => {
       </section>
 
       <TestimonialSection />
-      <Footer />
+            </main>
+
+<Footer />
       <FloatingWhatsApp customMessage="Hi, I'm interested in a pavers or hardscape project for my home in Central Florida." />
     </div>
   );
