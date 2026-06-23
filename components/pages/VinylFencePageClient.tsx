@@ -84,7 +84,7 @@ const VinylFencePageContent = () => {
       `Service Needed: ${formData.service}\n` +
       `Message: ${formData.message}`
     );
-    window.location.href = `mailto:info@rdsoutdoorliving.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:rdsoutdoorliving@outlook.com?subject=${subject}&body=${body}`;
   };
 
   return (

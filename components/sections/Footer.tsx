@@ -83,8 +83,8 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@rdsoutdoorliving.com">
-                  info@rdsoutdoorliving.com
+                <a href="mailto:rdsoutdoorliving@outlook.com">
+                  rdsoutdoorliving@outlook.com
                 </a>
               </li>
               <li style={{ color: '#9CA3AF', fontSize: '14px', marginTop: '8px' }}>
