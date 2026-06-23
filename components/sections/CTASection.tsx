@@ -61,7 +61,7 @@ export const CTASection: React.FC<CTASectionProps> = ({ cityName }) => {
             Request a Free Estimate
           </a>
           <a 
-            href="tel:+14070000000" 
+            href="tel:+17204003679" 
             style={{ 
               display: 'inline-flex', 
               alignItems: 'center', 

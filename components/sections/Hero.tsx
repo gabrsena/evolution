@@ -9,6 +9,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride }) => {
   const [videoLoaded, setVideoLoaded] = React.useState(false);
+  const videoRef = React.useRef<HTMLVideoElement>(null);
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -16,6 +17,14 @@ export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride })
       el.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  React.useEffect(() => {
+    if (videoRef.current) {
+      if (videoRef.current.readyState >= 2) {
+        setVideoLoaded(true);
+      }
+    }
+  }, []);
 
   const displaySubtext = cityName
     ? `Premium outdoor living spaces tailored for homeowners in ${cityName} & Central Florida.`
@@ -25,10 +34,12 @@ export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride })
     <section className="hero-section" style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '100px 24px' }}>
       {/* Background Video */}
       <video
+        ref={videoRef}
         autoPlay
         muted
         loop
         playsInline
+        className="hero-video"
         onLoadedData={() => setVideoLoaded(true)}
         style={{
           position: 'absolute',
@@ -85,7 +96,7 @@ export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride })
               Request a Free Estimate
             </a>
             <a 
-              href="tel:+14070000000" 
+              href="tel:+17204003679" 
               className="btn-hero-secondary"
             >
               Call Now

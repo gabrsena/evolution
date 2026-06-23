@@ -100,8 +100,8 @@ const ContactContent = () => {
                 </div>
                 <div>
                   <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#111827', marginBottom: '4px' }}>Phone Number</h4>
-                  <a href="tel:+14070000000" style={{ color: '#C9A55A', fontWeight: 600, fontSize: '16px', textDecoration: 'underline' }}>
-                    (407) 000-0000
+                  <a href="tel:+17204003679" style={{ color: '#C9A55A', fontWeight: 600, fontSize: '16px', textDecoration: 'underline' }}>
+                    (720) 400-3679
                   </a>
                 </div>
               </div>
@@ -258,7 +258,7 @@ const ContactContent = () => {
             </form>
 
             <div style={{ textAlign: 'center', marginTop: '24px', fontSize: '14px', color: '#4b5563' }}>
-              Prefer to call? <a href="tel:+14070000000" style={{ color: '#C9A55A', fontWeight: 700 }}>(407) 000-0000</a>
+              Prefer to call? <a href="tel:+17204003679" style={{ color: '#C9A55A', fontWeight: 700 }}>(720) 400-3679</a>
             </div>
           </div>
         </div>

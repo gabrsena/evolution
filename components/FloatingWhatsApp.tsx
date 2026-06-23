@@ -22,7 +22,7 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = () => {
   if (!isVisible) return null;
 
   return (
-    <a href="tel:+14070000000" className="floating-wa" aria-label="Call Now">
+    <a href="tel:+17204003679" className="floating-wa" aria-label="Call Now">
       <PhoneIcon />
     </a>
   );

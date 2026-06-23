@@ -517,6 +517,16 @@ button {
   box-sizing: border-box;
 }
 
+.hero-video {
+  object-position: center;
+}
+
+@media (max-width: 767px) {
+  .hero-video {
+    object-position: 60% center !important;
+  }
+}
+
 /* Gradients Blobs */
 .blob {
   position: absolute;

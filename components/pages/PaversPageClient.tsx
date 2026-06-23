@@ -221,7 +221,7 @@ const PaversPageContent = () => {
               <span>Request a Free Estimate</span>
             </a>
             <a 
-              href="tel:+14070000000" 
+              href="tel:+17204003679" 
               className="btn-secondary"
               style={{ color: '#ffffff', borderColor: '#ffffff' }}
               onMouseOver={(e) => {
@@ -463,7 +463,7 @@ const PaversPageContent = () => {
                 type="tel" 
                 id="phone" 
                 required 
-                placeholder="(407) 000-0000"
+                placeholder="(720) 400-3679"
                 value={formData.phone} 
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 style={{ 
@@ -590,8 +590,8 @@ const PaversPageContent = () => {
 
           <div style={{ textAlign: 'center', marginTop: '24px', fontSize: '14px', color: 'rgba(255,255,255,0.7)' }}>
             Or call us directly:{' '}
-            <a href="tel:+14070000000" style={{ color: '#C9A55A', fontWeight: 700, textDecoration: 'none' }}>
-              + (407) 000-0000
+            <a href="tel:+17204003679" style={{ color: '#C9A55A', fontWeight: 700, textDecoration: 'none' }}>
+              + (720) 400-3679
             </a>
           </div>
         </div>

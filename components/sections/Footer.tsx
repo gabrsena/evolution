@@ -78,8 +78,8 @@ export const Footer = () => {
             <h5>Contact Info</h5>
             <ul>
               <li>
-                <a href="tel:+14070000000">
-                  Phone: (407) 000-0000
+                <a href="tel:+17204003679">
+                  Phone: (720) 400-3679
                 </a>
               </li>
               <li>
