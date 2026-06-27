@@ -9,8 +9,10 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride }) => {
   const [videoLoaded, setVideoLoaded] = React.useState(false);
-  const videoRef = React.useRef<HTMLVideoElement>(null);
   const [isMobile, setIsMobile] = React.useState(false);
+  const [hasMounted, setHasMounted] = React.useState(false);
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+  
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -20,8 +22,11 @@ export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride })
   };
 
   React.useEffect(() => {
+    setHasMounted(true);
     setIsMobile(window.innerWidth < 768);
   }, []);
+
+  
 
   React.useEffect(() => {
     if (videoRef.current) {
@@ -38,19 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride })
   return (
     <section className="hero-section" style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '100px 24px' }}>
       {/* Background Video */}
-      {isMobile ? (
-        <div
-          style={{
-            background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d1b0a 100%)',
-            width: '100%',
-            height: '100%',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            zIndex: 0,
-          }}
-        />
-      ) : (
+      {hasMounted && !isMobile ? (
         <video
           ref={videoRef}
           autoPlay
@@ -74,6 +67,18 @@ export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride })
         >
           <source src="/hero.webm" type="video/webm" />
         </video>
+      ) : (
+        <div
+          style={{
+            background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d1b0a 100%)',
+            width: '100%',
+            height: '100%',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            zIndex: 0,
+          }}
+        />
       )}
 
       {/* Dark Overlay */}

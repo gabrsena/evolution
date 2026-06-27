@@ -43,6 +43,8 @@ const FAQS = [
 const VinylFencePageContent = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [isMobile, setIsMobile] = React.useState(false);
+  const [hasMounted, setHasMounted] = React.useState(false);
+  
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -54,7 +56,9 @@ const VinylFencePageContent = () => {
   });
 
   useEffect(() => {
+    setHasMounted(true);
     setIsMobile(window.innerWidth < 768);
+    
     // Scroll animation observer
     const observer = new IntersectionObserver(
       (entries) => {
@@ -108,19 +112,7 @@ const VinylFencePageContent = () => {
           background: '#000'
         }}
       >
-        {isMobile ? (
-          <div
-            style={{
-              background: 'linear-gradient(135deg, #0a0a0a, #1a1a2e)',
-              width: '100%',
-              height: '100%',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              zIndex: 0,
-            }}
-          />
-        ) : (
+        {hasMounted && !isMobile ? (
           <video 
             autoPlay 
             muted 
@@ -142,6 +134,18 @@ const VinylFencePageContent = () => {
           >
             <source src="/Vinyl Fence.webm" type="video/webm" />
           </video>
+        ) : (
+          <div
+            style={{
+              background: 'linear-gradient(135deg, #0a0a0a, #1a1a2e)',
+              width: '100%',
+              height: '100%',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              zIndex: 0,
+            }}
+          />
         )}
         <div 
           style={{ 

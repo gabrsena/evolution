@@ -14,10 +14,14 @@ import { CheckIcon } from '../icons';
 const OutdoorLivingPageContent = () => {
   const [videoLoaded, setVideoLoaded] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(false);
+  const [hasMounted, setHasMounted] = React.useState(false);
+  
   const { t } = useTranslation();
 
   useEffect(() => {
+    setHasMounted(true);
     setIsMobile(window.innerWidth < 768);
+    
     // Scroll animation observer
     const observer = new IntersectionObserver(
       (entries) => {
@@ -85,19 +89,7 @@ const OutdoorLivingPageContent = () => {
           background: '#000'
         }}
       >
-        {isMobile ? (
-          <div
-            style={{
-              background: 'linear-gradient(135deg, #0a0a0a, #1a1a2e)',
-              width: '100%',
-              height: '100%',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              zIndex: 0,
-            }}
-          />
-        ) : (
+        {hasMounted && !isMobile ? (
           <video 
             autoPlay 
             muted 
@@ -119,6 +111,18 @@ const OutdoorLivingPageContent = () => {
           >
             <source src="/OutdoorLiving.mp4" type="video/mp4" />
           </video>
+        ) : (
+          <div
+            style={{
+              background: 'linear-gradient(135deg, #0a0a0a, #1a1a2e)',
+              width: '100%',
+              height: '100%',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              zIndex: 0,
+            }}
+          />
         )}
         <div 
           style={{ 

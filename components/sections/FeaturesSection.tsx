@@ -8,16 +8,21 @@ export const FeaturesSection = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
   React.useEffect(() => {
+    setHasMounted(true);
     setIsMobile(window.innerWidth < 768);
   }, []);
+  
+
+  
 
   return (
     <section id="features" className="section features-section" style={{ position: 'relative', overflow: 'hidden', padding: '100px 24px', background: isMobile ? '#111827' : '#000' }}>
       
       {/* Background Video */}
-      {!isMobile && (
+      {(hasMounted && !isMobile) && (
         <video
           key={activeTab}
           autoPlay

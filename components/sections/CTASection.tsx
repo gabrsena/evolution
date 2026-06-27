@@ -10,15 +10,24 @@ interface CTASectionProps {
 
 export const CTASection: React.FC<CTASectionProps> = ({ cityName }) => {
   const { lang, t } = useTranslation();
+  const [isMobile, setIsMobile] = React.useState(false);
+  const [hasMounted, setHasMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setHasMounted(true);
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
 
   return (
     <section id="contact" className="section cta-section fade-in-section" style={{ position: 'relative', overflow: 'hidden' }}>
       {/* BACKGROUND VIDEO */}
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, background: '#000' }}>
-        <video autoPlay loop muted playsInline preload="none" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }}>
+        {hasMounted && !isMobile && (
+          <video autoPlay loop muted playsInline preload="none" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }}>
           <source src="/rds.mp4" type="video/mp4" />
         </video>
+        )}
       </div>
 
       <div className="cta-container" style={{ position: 'relative', zIndex: 1, maxWidth: '640px', margin: '0 auto', padding: '56px 40px' }}>
