@@ -89,7 +89,7 @@ const ServiceAreasPageContent = () => {
           background: '#000'
         }}
       >
-        {hasMounted && !isMobile ? (
+        {hasMounted ? (
           <video 
             autoPlay 
             muted 

@@ -7,22 +7,39 @@ import { CheckIcon } from '../icons';
 export const FeaturesSection = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = React.useRef<HTMLElement>(null);
 
   React.useEffect(() => {
     setHasMounted(true);
-    setIsMobile(window.innerWidth < 768);
-  }, []);
-  
 
-  
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            observer.disconnect(); // Only load once
+          }
+        });
+      },
+      { rootMargin: '200px' } // Start loading 200px before it enters the viewport
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
-    <section id="features" className="section features-section" style={{ position: 'relative', overflow: 'hidden', padding: '100px 24px', background: isMobile ? '#111827' : '#000' }}>
+    <section ref={sectionRef} id="features" className="section features-section" style={{ position: 'relative', overflow: 'hidden', padding: '100px 24px', background: '#000' }}>
       
       {/* Background Video */}
-      {(hasMounted && !isMobile) && (
+      {(hasMounted && isInView) && (
         <video
           key={activeTab}
           autoPlay

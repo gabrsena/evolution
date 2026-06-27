@@ -10,20 +10,40 @@ interface CTASectionProps {
 
 export const CTASection: React.FC<CTASectionProps> = ({ cityName }) => {
   const { lang, t } = useTranslation();
-  const [isMobile, setIsMobile] = React.useState(false);
   const [hasMounted, setHasMounted] = React.useState(false);
+  const [isInView, setIsInView] = React.useState(false);
+  const sectionRef = React.useRef<HTMLElement>(null);
 
   React.useEffect(() => {
     setHasMounted(true);
-    setIsMobile(window.innerWidth < 768);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            observer.disconnect(); // Only load once
+          }
+        });
+      },
+      { rootMargin: '200px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
 
   return (
-    <section id="contact" className="section cta-section fade-in-section" style={{ position: 'relative', overflow: 'hidden' }}>
+    <section ref={sectionRef} id="contact" className="section cta-section fade-in-section" style={{ position: 'relative', overflow: 'hidden' }}>
       {/* BACKGROUND VIDEO */}
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, background: '#000' }}>
-        {hasMounted && !isMobile && (
+        {hasMounted && isInView && (
           <video autoPlay loop muted playsInline preload="none" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }}>
           <source src="/rds.mp4" type="video/mp4" />
         </video>

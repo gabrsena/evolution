@@ -28,12 +28,32 @@ const CITIES = [
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ currentCity }) => {
   const { t } = useTranslation();
-  const [isMobile, setIsMobile] = React.useState(false);
   const [hasMounted, setHasMounted] = React.useState(false);
+  const [isInView, setIsInView] = React.useState(false);
+  const visualRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     setHasMounted(true);
-    setIsMobile(window.innerWidth < 768);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            observer.disconnect(); // Only load once
+          }
+        });
+      },
+      { rootMargin: '200px' }
+    );
+
+    if (visualRef.current) {
+      observer.observe(visualRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   const getActiveStyle = (cityName: string) => {
@@ -96,11 +116,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ currentCity }) => {
           </p>
         </div>
         
-        <div className="about-visual" style={{ position: 'relative', width: '100%', height: '400px', borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(201, 165, 90, 0.2)', boxShadow: '0 15px 35px rgba(0,0,0,0.1)', background: '#000' }}>
-          {hasMounted && !isMobile ? (
+        <div ref={visualRef} className="about-visual" style={{ position: 'relative', width: '100%', height: '400px', borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(201, 165, 90, 0.2)', boxShadow: '0 15px 35px rgba(0,0,0,0.1)', background: '#000' }}>
+          {hasMounted && isInView ? (
             <video autoPlay loop muted playsInline preload="none" style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
-            <source src="/rds.mp4" type="video/mp4" />
-          </video>
+              <source src="/rds.mp4" type="video/mp4" />
+            </video>
           ) : (
             <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg, #111827, #1f2937)' }} />
           )}

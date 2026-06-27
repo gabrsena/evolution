@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride })
   return (
     <section className="hero-section" style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '100px 24px' }}>
       {/* Background Video */}
-      {hasMounted && !isMobile ? (
+      {hasMounted ? (
         <video
           ref={videoRef}
           autoPlay

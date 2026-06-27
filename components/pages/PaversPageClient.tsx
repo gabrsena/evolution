@@ -145,7 +145,7 @@ const PaversPageContent = () => {
           background: '#000'
         }}
       >
-        {hasMounted && !isMobile ? (
+        {hasMounted ? (
           <video 
             autoPlay 
             muted 
