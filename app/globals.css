@@ -188,6 +188,12 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
+.app-container {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
 h1, h2, .section-headline, .hero-title {
   font-family: var(--font-cormorant-family);
   color: var(--heading-color);

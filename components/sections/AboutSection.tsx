@@ -90,7 +90,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ currentCity }) => {
         </div>
         
         <div className="about-visual" style={{ position: 'relative', width: '100%', height: '400px', borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(201, 165, 90, 0.2)', boxShadow: '0 15px 35px rgba(0,0,0,0.1)', background: '#000' }}>
-          <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
+          <video autoPlay loop muted playsInline preload="none" style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
             <source src="/rds.mp4" type="video/mp4" />
           </video>
         </div>

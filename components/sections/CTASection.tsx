@@ -16,7 +16,7 @@ export const CTASection: React.FC<CTASectionProps> = ({ cityName }) => {
     <section id="contact" className="section cta-section fade-in-section" style={{ position: 'relative', overflow: 'hidden' }}>
       {/* BACKGROUND VIDEO */}
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, background: '#000' }}>
-        <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }}>
+        <video autoPlay loop muted playsInline preload="none" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }}>
           <source src="/rds.mp4" type="video/mp4" />
         </video>
       </div>

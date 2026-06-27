@@ -7,38 +7,46 @@ import { CheckIcon } from '../icons';
 export const FeaturesSection = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  React.useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
   return (
-    <section id="features" className="section features-section" style={{ position: 'relative', overflow: 'hidden', padding: '100px 24px', background: '#000' }}>
+    <section id="features" className="section features-section" style={{ position: 'relative', overflow: 'hidden', padding: '100px 24px', background: isMobile ? '#111827' : '#000' }}>
       
       {/* Background Video */}
-      <video
-        key={activeTab}
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          zIndex: 0,
-        }}
-      >
-        <source
-          src={
-            activeTab === 0
-              ? '/pool.mp4'
-              : activeTab === 1
-              ? '/pavers.mp4'
-              : '/Landscaping.mp4'
-          }
-          type="video/mp4"
-        />
-      </video>
+      {!isMobile && (
+        <video
+          key={activeTab}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0,
+          }}
+        >
+          <source
+            src={
+              activeTab === 0
+                ? '/pool.mp4'
+                : activeTab === 1
+                ? '/pavers.mp4'
+                : '/Landscaping.mp4'
+            }
+            type="video/mp4"
+          />
+        </video>
+      )}
 
       {/* Dark Overlay */}
       <div 

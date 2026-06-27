@@ -10,6 +10,7 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride }) => {
   const [videoLoaded, setVideoLoaded] = React.useState(false);
   const videoRef = React.useRef<HTMLVideoElement>(null);
+  const [isMobile, setIsMobile] = React.useState(false);
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -17,6 +18,10 @@ export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride })
       el.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  React.useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
   React.useEffect(() => {
     if (videoRef.current) {
@@ -33,28 +38,43 @@ export const Hero: React.FC<HeroProps> = ({ cityName, whatsappMessageOverride })
   return (
     <section className="hero-section" style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '100px 24px' }}>
       {/* Background Video */}
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="hero-video"
-        onLoadedData={() => setVideoLoaded(true)}
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          zIndex: 0,
-          opacity: videoLoaded ? 1 : 0,
-          transition: 'opacity 1s ease-in-out',
-        }}
-      >
-        <source src="/hero.webm" type="video/webm" />
-      </video>
+      {isMobile ? (
+        <div
+          style={{
+            background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d1b0a 100%)',
+            width: '100%',
+            height: '100%',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            zIndex: 0,
+          }}
+        />
+      ) : (
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          className="hero-video"
+          onLoadedData={() => setVideoLoaded(true)}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0,
+            opacity: videoLoaded ? 1 : 0,
+            transition: 'opacity 1s ease-in-out',
+          }}
+        >
+          <source src="/hero.webm" type="video/webm" />
+        </video>
+      )}
 
       {/* Dark Overlay */}
       <div 

@@ -75,6 +75,7 @@ const services = [
 
 const PaversPageContent = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -86,6 +87,7 @@ const PaversPageContent = () => {
   });
 
   useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
     // Scroll animation observer
     const observer = new IntersectionObserver(
       (entries) => {
@@ -139,26 +141,41 @@ const PaversPageContent = () => {
           background: '#000'
         }}
       >
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline 
-          onLoadedData={() => setVideoLoaded(true)}
-          style={{ 
-            position: 'absolute', 
-            top: 0, 
-            left: 0, 
-            width: '100%', 
-            height: '100%', 
-            objectFit: 'cover', 
-            zIndex: 0,
-            opacity: videoLoaded ? 1 : 0,
-            transition: 'opacity 1s ease-in-out'
-          }}
-        >
-          <source src="/pavers.mp4" type="video/mp4" />
-        </video>
+        {isMobile ? (
+          <div
+            style={{
+              background: 'linear-gradient(135deg, #0a0a0a, #1a1a2e)',
+              width: '100%',
+              height: '100%',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              zIndex: 0,
+            }}
+          />
+        ) : (
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            preload="none"
+            onLoadedData={() => setVideoLoaded(true)}
+            style={{ 
+              position: 'absolute', 
+              top: 0, 
+              left: 0, 
+              width: '100%', 
+              height: '100%', 
+              objectFit: 'cover', 
+              zIndex: 0,
+              opacity: videoLoaded ? 1 : 0,
+              transition: 'opacity 1s ease-in-out'
+            }}
+          >
+            <source src="/pavers.mp4" type="video/mp4" />
+          </video>
+        )}
         <div 
           style={{ 
             position: 'absolute', 
